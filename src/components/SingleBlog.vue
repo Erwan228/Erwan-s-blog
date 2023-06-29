@@ -1,6 +1,6 @@
 <template>
     <div class="blog">
-        <h3>{{ blog.title }}</h3>
+        <router-link :to="{ name: 'Blog', params: {id: blog.id, blog: blog}}">{{ blog.title }}</router-link>
         <p>{{ snippet }}</p>
     </div>
 </template>
