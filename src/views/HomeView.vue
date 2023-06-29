@@ -2,27 +2,24 @@
   <div class="home">
     <h1>Home</h1>
     <h2>Blog posts</h2>
-      <div class="blogs"></div>
+      <BlogList :blogs="blogs"/>
   </div>
 </template>
 
 <script>
-import { onMounted, ref } from 'vue';
+import BlogList from '@/components/BlogList.vue';
+import { ref } from 'vue';
 
 
 export default {
   name: 'HomeView',
   components: {
-    
-  },
+    BlogList
+},
   setup() {
-    const blogs = ref([])
-    onMounted(() => {
-      fetch('http://localhost:3000/blogs')
-      .then(res => res.json())
-      .then(data => this.blogs = data)
-      .catch(err => console.log(err.message))
-    })
+    const blogs = ref([
+      {title: "A good run", id: 1, body: "As a warrior, I tanked in the amdapor keep. As per usual I'm quite nervous about tanking since people don't seem to respect tanks, but this time it was quite enjoyable since they respected me. I got a com. A good run", tags: []}
+    ])
     return {
       blogs,
     }
