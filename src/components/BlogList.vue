@@ -7,8 +7,12 @@
 </template>
 
 <script>
+import SingleBlog from './SingleBlog.vue';
 export default{
-    props: ['blogs']
+    props: ['blogs'],
+    components: {
+        SingleBlog
+    }
 }
 </script>
 

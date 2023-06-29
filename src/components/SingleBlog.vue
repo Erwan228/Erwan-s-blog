@@ -6,6 +6,7 @@
 </template>
 
 <script>
+import { computed } from 'vue'
 export default{
     props: ['blog'],
     setup(props) {
@@ -18,3 +19,9 @@ export default{
     }
 }
 </script>
+
+<style>
+h3 {
+    color: orange
+}
+</style>
